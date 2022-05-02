@@ -29,6 +29,10 @@ def index(request):
     liste = list(models.Lieu.objects.all())
     return render(request, 'visite/index.html', {'liste': liste})
 
+def home(request):
+    liste = list(models.Lieu.objects.all())
+    return render(request, 'visite/home.html', {'liste': liste})
+
 def affiche(request, id):
     lieu = models.Lieu.objects.get(pk=id)
     return render(request,"visite/affiche.html",{"lieu" : lieu})
