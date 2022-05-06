@@ -1,3 +1,11 @@
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+
+}
+
 body {
   background-color: lightblue;
   margin: 0;
@@ -14,12 +22,50 @@ html,body{
 a{
   text-decoration:none
 }
+
 .header{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .icons i{
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+}
+
+.header .icons i:hover{
+    color:var(--main-color)
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color:#999999;
+}
+
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+/* .header{
   position:relative;
   overflow:hidden;
   display:flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: flex-start;
   align-content: flex-start;
   height:50vw;
@@ -28,6 +74,7 @@ a{
   min-width:300px;
   color:#eee;
 }
+*/
 .header:after{
   content:"";
   width:100%;
@@ -101,8 +148,8 @@ a{
 }
 
 .sides{
-    display:flex;
-    flex-direction:row;
+
+    justify-content: end;
     width:100%;
 }
 
