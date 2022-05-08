@@ -1,5 +1,5 @@
 :root{
-    --main-color:#d3ad7f;
+    --main-color:#525252;
     --black:#13131a;
     --bg:#010103;
     --border:.1rem solid rgba(255,255,255,.3);
@@ -20,10 +20,10 @@ html,body{
 
 }
 a{
-  text-decoration:none
+  text-decoration:none;
 }
 
-.header{
+/*.header{
     background: var(--bg);
     display: flex;
     align-items: center;
@@ -36,6 +36,7 @@ a{
     right: 0;
     z-index: 1000;
 }
+*/
 
 .header .icons i{
     color: #fff;
@@ -44,14 +45,46 @@ a{
     margin-left: 1.5rem;
 }
 
-.header .icons i:hover{
-    color:var(--main-color)
+header i{
+    color: #000;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+.header i{
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+.header i:hover{
+    color:var(--main-color);
+}
+
+.navbar{
+position:fixed;
+
+
+}
+
+.container{
+position:fixed;
+display:flex;
+width:100%;
+justify-content:end;
+box-shadow: 0px 3px 3px #999;
+padding-top:0.7rem;
+padding-bottom:-0.3rem;
+
 }
 
 .header .navbar a{
     margin: 0 1rem;
-    font-size: 1.6rem;
-    color:#999999;
+    font-size: 1.2rem;
+    color:#202020;
+
 }
 
 .header .navbar a:hover{
@@ -60,12 +93,12 @@ a{
     padding-bottom: .5rem;
 }
 
-/* .header{
+.header{
   position:relative;
   overflow:hidden;
   display:flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: end;
   align-items: flex-start;
   align-content: flex-start;
   height:50vw;
@@ -74,7 +107,7 @@ a{
   min-width:300px;
   color:#eee;
 }
-*/
+
 .header:after{
   content:"";
   width:100%;
