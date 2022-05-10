@@ -65,7 +65,8 @@ header i{
 
 .navbar{
 position:fixed;
-
+height: 7.5%;
+padding-top:0.8rem;
 
 }
 
@@ -74,10 +75,15 @@ position:fixed;
 display:flex;
 width:100%;
 justify-content:end;
-box-shadow: 0px 3px 3px #999;
-padding-top:0.7rem;
-padding-bottom:-0.3rem;
+box-shadow: 0px 1px 1px #999;
+vertical-align: text-top;
+}
 
+.aadi-header-sticky.aadi-header-transparent.aadi-header-v11,
+.aadi-header-sticky.aadi-header-transparent.aadi-header-v11 .aadi-top-header,
+.aadi-header-sticky.aadi-header-transparent.aadi-header-v11 .aadi-bottom-header,
+#main-header .aadi-header-collaspe {
+    background-color: #fff !important;
 }
 
 .header .navbar a{
@@ -172,7 +178,7 @@ padding-bottom:-0.3rem;
   align-items:center;
   align-content:center;
   margin:20px;
-  padding:0px 10px;
+
   font-weight:900;
   font-size:1.1em;
   line-height:1;
@@ -231,4 +237,4 @@ padding-bottom:-0.3rem;
 
 .twtr{
   margin-top:100px
-}.btn.twtr:after{content:"\1F426";padding-left:5px}
+}.btn.twtr:after{content:1F426;padding-left:5px}
