@@ -20,18 +20,17 @@ def traitement(request):
     lform = LieuForm(request.POST)
     if lform.is_valid():
         lieu = lform.save()
-        return HttpResponseRedirect("/visite/")
+        return HttpResponseRedirect("/visite/"  )
     else:
         return render(request,"visite/ajout.html",{"form": lform})
-
-
-def index(request):
-    liste = list(models.Lieu.objects.all())
-    return render(request, 'visite/index.html', {'liste': liste})
 
 def home(request):
     liste = list(models.Lieu.objects.all())
     return render(request, 'visite/home.html', {'liste': liste})
+
+def index(request):
+    liste = list(models.Lieu.objects.all())
+    return render(request, 'visite/index.html', {'liste': liste})
 
 def affiche(request, id):
     lieu = models.Lieu.objects.get(pk=id)
@@ -39,7 +38,7 @@ def affiche(request, id):
 
 def effacer(request, id):
     lieu = models.Lieu.objects.get(pk=id)
-    lieu.effacer()
+    lieu.delete()
     return HttpResponseRedirect("/visite/")
 
 def update(request, id):
@@ -56,6 +55,13 @@ def traitementupdate(request, id):
         return HttpResponseRedirect("/visite/")
     else:
         return render(request, "visite/update.html", {"form": lform, "id": id})
+
+
+
+
+
+
+
 
 
 

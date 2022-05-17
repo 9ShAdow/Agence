@@ -2,12 +2,12 @@
     --main-color:#525252;
     --black:#13131a;
     --bg:#010103;
-    --border:.1rem solid rgba(255,255,255,.3);
+    /*--border:.1rem solid rgba(255,255,255,.3);*/
 
 }
 
 body {
-  background-color: lightblue;
+  background-color: #9999;
   margin: 0;
 
 }
@@ -68,6 +68,7 @@ position:fixed;
 height: 7.5%;
 padding-top:0.8rem;
 
+
 }
 
 .container{
@@ -75,16 +76,12 @@ position:fixed;
 display:flex;
 width:100%;
 justify-content:end;
-box-shadow: 0px 1px 1px #999;
+box-shadow: 0px 1px 1px #9999;
 vertical-align: text-top;
+background-color:#9999;
 }
 
-.aadi-header-sticky.aadi-header-transparent.aadi-header-v11,
-.aadi-header-sticky.aadi-header-transparent.aadi-header-v11 .aadi-top-header,
-.aadi-header-sticky.aadi-header-transparent.aadi-header-v11 .aadi-bottom-header,
-#main-header .aadi-header-collaspe {
-    background-color: #fff !important;
-}
+
 
 .header .navbar a{
     margin: 0 1rem;
@@ -122,7 +119,7 @@ vertical-align: text-top;
   bottom:0;
   left:0;
   z-index:-1;
- background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+ /*background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);*/
 }
 .header:before{
   content:"";

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{%static 'villes/visite/static/home.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'visite/home.css'%}">
 </head>
 <body>
 
-<a href="ajout/"> ajouter une ville </a>
+<a href="/ajout"> ajouter une ville </a>
  <ol>
         {% for l in liste %}
             <li> {{l}} date de parution {{l.date_parution|date:"d/m/Y"}} <a href="affiche/{{l.id}}"> afficher les détails </a> <a href="delete/{{l.id}}"> effacer </a>

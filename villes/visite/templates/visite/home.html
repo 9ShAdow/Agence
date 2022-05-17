@@ -3,8 +3,8 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{%static 'home.css' %}">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'visite/home.css' %}">
     
 </head>
 <body>
@@ -14,7 +14,7 @@
           <nav class="navbar">
 
 
-                <a href="ajout/"> NOS VILLES </a>
+                <a href="affiche/"> NOS VILLES </a>
                 <a href="ajout/"> POPULAIRES  </a>
                 <a href="ajout/"> AJOUTER UNE VILLE</a>
 
@@ -46,6 +46,13 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
   <p align="center"><a href="https://twitter.com/nodws" class="btn twtr" target="_b">Follow me on Twitter</a>
   </p>
+
+    <ol>
+        {% for l in liste %}
+            <li> {{l}} date de parution {{l.periode_plus_visite|date:"d/m/Y"}} <a href="affiche/{{l.id}}"> afficher les détails </a> <a href="delete/{{l.id}}"> effacer </a>
+                <a href="update/{{l.id}}"> mise à jour </a></li>
+        {%endfor%}
+    </ol>
 </section>
 
 </body>
