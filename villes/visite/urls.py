@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, monuments_views
 
 urlpatterns = [
     path('',views.home),
@@ -7,7 +7,9 @@ urlpatterns = [
     path('ajout/',views.ajout),
     path("traitement/",views.traitement),
     path("affiche/<int:id>/",views.affiche),
-    path("effacer/<int:id>",views.effacer),
+    path("delete/<int:id>",views.delete),
     path("update/<int:id>",views.update),
     path("traitementupdate/<int:id>",views.traitementupdate),
+    # views monuments
+
 ]

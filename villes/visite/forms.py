@@ -15,3 +15,16 @@ class LieuForm(ModelForm):
             'commentaires faits' : _('commentaires_faits')
         }
         localized_fields = ('periode_plus_visite','periode_moins_visite',) #mettre en format une date français par defaut en format us
+
+class MonumentsForms(ModelForm):
+    class Meta:
+        model = models.Monuments
+        fields = ('lieu', 'nom_monument', 'adresse_monument', 'date_construction')
+        labels = {
+            'lieu': _('lieu'),
+            'nom monument': _('nom_monument'),
+            'adresse monument': _('adresse_monument'),
+            'date_construction': _('date_construction'),
+
+        }
+        localized_fields = ('date_construction',)
