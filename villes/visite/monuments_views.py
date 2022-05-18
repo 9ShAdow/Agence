@@ -4,23 +4,23 @@ from django.shortcuts import render
 
 from . import  models
 # Cr eate your views here.
-def ajout(request):
+def ajoutmonuments(request):
     if request.method == "POST":
         form = LieuForm(request)
         if form.is_valid():
             lieu = form.save()
             return HttpResponseRedirect("/visite/")
         else:
-            return render(request,"visite/ajout.html",{"form": form})
+            return render(request,"monuments/ajout.html",{"form": form})
     else :
         form = LieuForm()
-        return render(request,"visite/ajout.html",{"form" : form})
+        return render(request,"monuments/ajout.html",{"form" : form})
 
 def traitement(request):
     lform = LieuForm(request.POST)
     if lform.is_valid():
         lieu = lform.save()
-        return HttpResponseRedirect("/visite/"  )
+        return HttpResponseRedirect("/visite/")
     else:
         return render(request,"visite/ajout.html",{"form": lform})
 

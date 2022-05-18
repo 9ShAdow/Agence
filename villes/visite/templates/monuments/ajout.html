@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'visite/ajout.css' %}">
+
 </head>
 <body>
+    <header class="header">
+        <div id="cont" class="container">
+          <i class="fa-thin fa-island-tropical"></i>
+          <nav class="navbar">
 
+
+                <a href="affiche/"> NOS VILLES </a>
+                <a href="ajout/"> POPULAIRES  </a>
+                <a href="ajout/"> AJOUTER UNE VILLE</a>
+
+
+
+          </nav>
+
+    </header>
+
+
+
+    <section class="avform">
+        <form method="post" action="/visite/traitement/">
+            {% csrf_token %} <!-- code permettant de protéger votre application en évitant
+de rejouer un formulaire avec des droits différents -->
+            <table>
+                {{ form.MonumentsForms.as_table }} <!-- permet d'afficher tous les champs sous forme d'une liste
+-->         </table>
+            <input type="submit" value="envoyer les données"\>
+        </form>
+    </section>
 </body>
 </html>
