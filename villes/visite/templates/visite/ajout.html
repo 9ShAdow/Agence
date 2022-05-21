@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <title>HOME</title>
-    <link rel="stylesheet" type="text/css" href="{%static 'visite/ajout.css' %}">
+{% extends "visite/main.html" %}
 
-</head>
-<body>
-    <header class="header">
-        <div id="cont" class="container">
-          <i class="fa-thin fa-island-tropical"></i>
-          <nav class="navbar">
+{% block title %}
 
+    AJOUTER VILLE
 
-                <a href="affiche/"> NOS VILLES </a>
-                <a href="ajout/"> POPULAIRES  </a>
-                <a href="ajout/"> AJOUTER UNE VILLE</a>
+{% endblock %}
 
-
-
-          </nav>
-
-    </header>
-
-
-
+{% block content %}
     <section class="avform">
         <form method="post" action="/visite/traitement/">
             {% csrf_token %} <!-- code permettant de protéger votre application en évitant
@@ -36,5 +17,5 @@ de rejouer un formulaire avec des droits différents -->
             <input type="submit" value="envoyer les données"\>
         </form>
     </section>
-</body>
-</html>
+
+{% endblock %}

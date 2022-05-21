@@ -31,8 +31,13 @@
             {% csrf_token %} <!-- code permettant de protéger votre application en évitant
 de rejouer un formulaire avec des droits différents -->
             <table>
-                {{ form.MonumentsForms.as_table }} <!-- permet d'afficher tous les champs sous forme d'une liste
--->         </table>
+                <p><label for="nom_monument">Message:</label>
+                    <textarea name="message" id="nom_monument" required></textarea>
+                </p>
+                 <p><label for="date_construction">DATE DE CONSTRUCTION :</label>
+                    <input name="DATE DE CONSTRUCTION" id="date_construction" required></input>
+                </p>
+        </table>
             <input type="submit" value="envoyer les données"\>
         </form>
     </section>
