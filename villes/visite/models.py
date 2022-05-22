@@ -15,7 +15,7 @@ class Lieu(models.Model):  # déclare la classe Lieu héritant de la classe Mode
 
 
     def __str__(self):
-        chaine = f"La ville de  {self.ville} se trouve en {self.pays} elle a  {self.visite_par_an} visite par an "
+        chaine = str(f"La ville de  {self.ville} se trouve en {self.pays} elle a  {self.visite_par_an} visite par an ")
         return chaine
 
     def dico(self):
@@ -31,7 +31,7 @@ class Monuments(models.Model):
     image_monument = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
-        return {"nom-monument": self.nom_monument, "adresse_monument": self.adresse_monument, "date_construction": self.date_construction}
+         return self.nom_monument
 
     def dico(self):
         return {"nom_monument": self.nom_monument, "adresse_monument ": self.adresse_monument, "date_construction": self.date_construction, "image_monument": self.image_monument, "lieu": self.lieu}

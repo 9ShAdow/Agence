@@ -20,7 +20,7 @@ class LieuForm(ModelForm):
         }
 
 
-class MonumentsForms(ModelForm):
+class MonumentsForm(ModelForm):
     class Meta:
         model = models.Monuments
         fields = ('nom_monument', 'adresse_monument', 'date_construction', 'image_monument', 'lieu',)

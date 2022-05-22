@@ -6,8 +6,24 @@
 </head>
 <body>
 <h1> {{lieu.ville}} </h1>
-<p> Ce livre est écrit par {{lieu.ville}} et est paru le {{lieu.ville}}. Il possède {{lieu.nombre_pages}} pages </p>
+<p>La ville de  {{lieu.ville}} et est situé en  {{lieu.pays}}. Elle possede possède {{lieu.isite_par_an}} visite par an </p>
 <h3> résumé </h3>
-<p> {{livre.resume}}</p>
+<p> {{livre.commentaires_faits}}</p>
+
+<a href="/ajoutmonuments/"> AJOUTER UN MONUMENT</a>
+
+<h2>
+    Liste des monuments de {{ lieu.ville }}
+</h2>
+
+<ol>{% for i in monuments %}
+
+<li>
+    {{i}}
+    <a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a>
+    <a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a>
+</li>
+{% endfor %}
+</ol>
 </body>
 </html>

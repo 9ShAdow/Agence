@@ -34,7 +34,9 @@ def index(request):
 
 def affiche(request, id):
     lieu = models.Lieu.objects.get(pk=id)
-    return render(request,"visite/affiche.html",{"lieu" : lieu})
+    monuments = models.Monuments.objects.filter(lieu= lieu.id)
+    return render(request,"visite/affiche.html",{"lieu" : lieu, "monuments": monuments})
+
 
 def delete(request, id):
     lieu = models.Lieu.objects.get(pk=id)
