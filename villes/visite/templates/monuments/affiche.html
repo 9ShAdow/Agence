@@ -3,36 +3,11 @@
 {% block title %}404{% endblock title %}
 
 {% block content %}
-
-<h2>
-    Liste des monuments
-</h2>
-
-<table>
-    <thead>
-    <tr>
-        <th><abbr title="ID">ID</abbr></th>
-        <th>Image</th>
-        <th>Nom</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for i in monuments %}
-
-    {{i}}
-    <tr>
-        <th>{{i.id}}</th>
-        {% if i.image_monuments %}
-        <td><img src="{{ i.image_villes}}" width="200"></td>
-        {% endif %}
-        <td>{{f.Nom}}</td>
-        <td><a href="/visite/affichemonuments/{{i.id}}/"> afficher </a></td>
-        <td><a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a></td>
-        <td><a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-<li><a href="http://127.0.0.1:8000/ajout/">ajouter une faction </a></li>
-<li><a href="http://127.0.0.1:8000/index_hero/">liste de tout les heros </a></li>
+<h1> Le {{monuments.nom_monument}} </h1>
+<br>
+<h5>
+{{monuments.adresse_monument}}
+</h5>
+<br>
+<h5> Le{{monuments.nom_monument }} a été construit le {{monuments.date_construction}}
 {% endblock %}

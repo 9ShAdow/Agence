@@ -29,11 +29,13 @@ def home(request):
     return render(request, 'monuments/home.html', {'liste': liste})
 
 def index(request):
-    liste = list(models.Monuments.objects.all())
-    return render(request, 'monuments/index_monuments.html', {'liste': liste})
+    monuments = list(models.Monuments.objects.all())
+
+    return render(request, 'monuments/index_monuments.html', {'monuments': monuments})
 
 def affiche(request, id):
     monuments = models.Monuments.objects.get(pk=id)
+
     return render(request,"monuments/affiche.html",{"monuments": monuments})
 
 def delete(request, id):

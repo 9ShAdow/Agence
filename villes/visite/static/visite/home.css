@@ -48,6 +48,17 @@ button:hover {color:#353535;background-color:#fff;border-color:#fff}
 .borderless button:hover:before, .borderless button:hover:after {width:calc(100% + 12px); height:calc(100% + 12px);border-color:#E1E1E1}
 
 /* fin logo */
+
+.button1 {color:#000;background:transparent;border-width:2px;border-style: solid;border-color: #999;position:relative;margin:1em;display:inline-block;padding:0.5em 1em;transition:all 0.3s ease-in-out;text-align:center;
+font-family:comfortaa;font-weight:bold;
+cursor:pointer;}
+.button1:before, button:after {content:'';display:block;position:absolute;border-color:#E1E1E1;box-sizing:border-box;border-style:solid;width:1em;height:1em;transition:all 0.3s ease-in-out}
+.button1:before {top:-6px;left:-6px;border-width:2px 0 0 2px;z-index:5;}
+.button1:after {bottom:-6px;right:-6px;border-width:0 2px 2px 0;}
+.button1:hover:before, button:hover:after {width:calc(100% + 12px);
+  height:calc(100% + 12px);border-color:#fff}
+.button1:hover {color:#353535;background-color:#fff;border-color:#fff}
+.panel {max-width:960px;text-align:center;position:relative;margin:auto;}
 nav{
 flex:1;
 text-align:right;
@@ -162,9 +173,35 @@ color:#fff;
 margin-top:3vh;
 margin-left:20vh;
 margin-right:20vh;
-padding-left:30vh;
-background-color: rgba(0, 0, 0, .8);
-color:#fff;
+padding-left:7vh;
+background-color: rgba(255, 255, 255, .8);
+color:#000;
 }
 
+.avform3{
+text-aling:center;
+
+width:50%;
+padding:3vh;
+margin-top:3vh;
+margin-left:25%;
+margin-right:25%;
+padding-left:3%;
+background-color: rgba(255, 255, 255, .8);
+color:#000;
+}
+
+
+.tableau1{
+width:50%;
+
+
+font-weight:bold;
+
+}
+
+a{
+    color:#000;
+    text-decoration:none;
+}
 

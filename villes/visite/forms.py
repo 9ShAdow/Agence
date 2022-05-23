@@ -27,7 +27,7 @@ class MonumentsForm(ModelForm):
         labels = {
             'nom monument': 'nom_monument',
             'adresse monument': 'adresse_monument',
-            'date_construction': 'date_construction',
+            'date_construction': 'date de construction',
             'image_monument': 'Image du monument',
             'lieu': 'ville',
         }

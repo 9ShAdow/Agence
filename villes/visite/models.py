@@ -34,7 +34,7 @@ class Monuments(models.Model):
          return self.nom_monument
 
     def dico(self):
-        return {"nom_monument": self.nom_monument, "adresse_monument ": self.adresse_monument, "date_construction": self.date_construction, "image_monument": self.image_monument, "lieu": self.lieu}
+        return {"nom_monument": self.nom_monument, "adresse_monument": self.adresse_monument, "date_construction": self.date_construction, "image_monument": self.image_monument, "lieu": self.lieu}
 
 
 

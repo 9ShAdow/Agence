@@ -3,34 +3,40 @@
 {% block title %}404{% endblock title %}
 
 {% block content %}
-<section class="avform">
-    <table>
+<section class="avform3">
+
         <h1> {{lieu.ville}} </h1>
-        <p>La ville de  {{lieu.ville}} et est situé en  {{lieu.pays}}. Elle possede possède {{lieu.isite_par_an}} visite par an </p>
-        <h3> résumé </h3>
-        <p> {{livre.commentaires_faits}}</p>
+    <br>
+        <h6>La ville de  {{lieu.ville}} et est situé en  {{lieu.pays}}. Elle accuellit {{lieu.visite_par_an}} visitateurs par an. </h6>
+    <br>
+        <h3> commentaires : </h3>
+    <br>
+        <h6> {{lieu.commentaires_faits}}</h6>
 
-        <a href="/ajoutmonuments/"> AJOUTER UN MONUMENT</a>
 
 
+        <a href="/ajoutmonuments/"><button class="button1"> AJOUTER UN MONUMENT</button></a>
+
+    <br>
+    <br>
         <h2>
             Liste des monuments de {{ lieu.ville }}
         </h2>
+    <br>
+        <table>
+            {% for i in monuments %}
 
-        <ol>{% for i in monuments %}
 
-                {% if i in i.image_monument %}
-                    <td><img src="{{ i.image_monument.url}}" width="200"></td>
-                {% endif  %}
 
-        <li>
-            {{i}}
-            <a href="/visite/affichemonuments/{{i.id}}/"> afficher </a>
-            <a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a>
-            <a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a>
-        </li>
-        {% endfor %}
-        </ol>
-    </table>
+
+            <tr class="tableau2"><td>{{i}}</td>
+                <td><a href="/visite/affichemonuments/{{i.id}}/"> afficher </a></td>
+                <td><a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a></td>
+                <td><a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
 </section>
 {% endblock %}
