@@ -28,7 +28,7 @@ class Monuments(models.Model):
     nom_monument = models.CharField(max_length=100)
     adresse_monument = models.CharField(max_length=100)
     date_construction = models.DateField(blank=True, null=True)
-    image_monument = models.ImageField(null=True, blank=True, upload_to="images/")
+    image_monument = models.ImageField(null=True, blank=True, upload_to="media/images")
 
     def __str__(self):
          return self.nom_monument

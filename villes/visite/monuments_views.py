@@ -25,16 +25,16 @@ def traitementmonuments(request):
         return render(request,"monuments/ajout.html",{"form": lform})
 
 def home(request):
-    liste = list(models.Lieu.objects.all())
+    liste = list(models.Monuments.objects.all())
     return render(request, 'monuments/home.html', {'liste': liste})
 
 def index(request):
-    liste = list(models.Lieu.objects.all())
-    return render(request, 'monuments/index.html', {'liste': liste})
+    liste = list(models.Monuments.objects.all())
+    return render(request, 'monuments/index_monuments.html', {'liste': liste})
 
 def affiche(request, id):
     monuments = models.Monuments.objects.get(pk=id)
-    return render(request,"monuments/affiche.html",{"lieu" : lieu})
+    return render(request,"monuments/affiche.html",{"monuments": monuments})
 
 def delete(request, id):
     monuments = models.Monuments.objects.get(pk=id)

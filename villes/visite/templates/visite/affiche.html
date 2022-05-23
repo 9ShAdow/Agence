@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> fiche {{lieu.pays}}</title>
-</head>
-<body>
-<h1> {{lieu.ville}} </h1>
-<p>La ville de  {{lieu.ville}} et est situé en  {{lieu.pays}}. Elle possede possède {{lieu.isite_par_an}} visite par an </p>
-<h3> résumé </h3>
-<p> {{livre.commentaires_faits}}</p>
+{% extends "visite/main.html" %}
 
-<a href="/ajoutmonuments/"> AJOUTER UN MONUMENT</a>
+{% block title %}404{% endblock title %}
 
-<h2>
-    Liste des monuments de {{ lieu.ville }}
-</h2>
+{% block content %}
+<section class="avform">
+    <table>
+        <h1> {{lieu.ville}} </h1>
+        <p>La ville de  {{lieu.ville}} et est situé en  {{lieu.pays}}. Elle possede possède {{lieu.isite_par_an}} visite par an </p>
+        <h3> résumé </h3>
+        <p> {{livre.commentaires_faits}}</p>
 
-<ol>{% for i in monuments %}
+        <a href="/ajoutmonuments/"> AJOUTER UN MONUMENT</a>
 
-<li>
-    {{i}}
-    <a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a>
-    <a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a>
-</li>
-{% endfor %}
-</ol>
-</body>
-</html>
+
+        <h2>
+            Liste des monuments de {{ lieu.ville }}
+        </h2>
+
+        <ol>{% for i in monuments %}
+
+                {% if i in i.image_monument %}
+                    <td><img src="{{ i.image_monument.url}}" width="200"></td>
+                {% endif  %}
+
+        <li>
+            {{i}}
+            <a href="/visite/affichemonuments/{{i.id}}/"> afficher </a>
+            <a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a>
+            <a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a>
+        </li>
+        {% endfor %}
+        </ol>
+    </table>
+</section>
+{% endblock %}

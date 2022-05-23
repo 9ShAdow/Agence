@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="{%static 'visite/home.css' %}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-
-    <header class="header">
-        <div id="cont" class="container">
-          <i class="fa-thin fa-island-tropical"></i>
-          <nav class="navbar">
-
-
-                <a href="affiche/"> NOS VILLES </a>
-                <a href="ajout/"> POPULAIRES  </a>
-                <a href="ajout/"> AJOUTER UNE VILLE</a>
-
-
-
-          </nav>
-        </div>
-    </header>
+<div class="container">
+    <div class="navbar">
+                <div class="panel borderless">
+                    <a href="/"> <button class="logo">AGENCE</button> </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <div class="panel">
+                                 <a href="/index/"> <button > NOS VILLES </button> </a>
+                                 <a href="/ajoutmonuments/" ><button > AJOUTER UN MONUMENT</button></a>
+                                 <a href="/ajout/" > <button > AJOUTER UNE VILLE</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="menu" > MENU </button>
+    </div>
 
 {% block content %}
 
 {% endblock %}
+
+</div>
 </body>
 
 </html>

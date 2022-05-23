@@ -17,7 +17,7 @@ def ajout(request):
         return render(request,"visite/ajout.html",{"form" : form})
 
 def traitement(request):
-    lform = LieuForm(request.POST)
+    lform = LieuForm(request.POST, request.FILES)
     if lform.is_valid():
         lieu = lform.save()
         return HttpResponseRedirect("/visite/"  )

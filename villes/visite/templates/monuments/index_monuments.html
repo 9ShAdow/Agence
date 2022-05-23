@@ -1,13 +1,10 @@
 {% extends "visite/main.html" %}
-
-{% block title %}404{% endblock title %}
-
+{% block title %}
+LISTE DES MONUMENTS
+{% endblock %}
 {% block content %}
 
-<h2>
-    Liste des monuments
-</h2>
-
+<h3>Liste de tout les monuments </h3>
 <table>
     <thead>
     <tr>
@@ -22,17 +19,15 @@
     {{i}}
     <tr>
         <th>{{i.id}}</th>
-        {% if i.image_monuments %}
-        <td><img src="{{ i.image_villes}}" width="200"></td>
+        {% if i.image_monument %}
+        <td><img src="{{ i.image_monument.url}}" width="200"></td>
         {% endif %}
-        <td>{{f.Nom}}</td>
-        <td><a href="/visite/affichemonuments/{{i.id}}/"> afficher </a></td>
+        <td>{{i.nom_monument}}</td>
+        <<td><a href="/visite/affichemonuments/{{i.id}}/"> afficher </a></td>
         <td><a href="/visite/updatemonuments/{{i.id}}/"> mettre a jour </a></td>
         <td><a href="/visite/deletemonuments/{{i.id}}/"> supprimer </a></td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
-<li><a href="http://127.0.0.1:8000/ajout/">ajouter une faction </a></li>
-<li><a href="http://127.0.0.1:8000/index_hero/">liste de tout les heros </a></li>
 {% endblock %}
